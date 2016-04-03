@@ -1,0 +1,236 @@
+==> elixir (compile)
+==> Dialyzing Elixir...
+  Compiling some key modules to native code... done in 0m0.46s
+  Proceeding with analysis...
+lib/application.ex:125: Type specification 'Elixir.Application':spec(app()) -> [{key(),value()}] | 'nil' is a supertype of the success typing: 'Elixir.Application':spec(atom()) -> 'nil' | [{'applications' | 'description' | 'env' | 'id' | 'included_applications' | 'maxP' | 'maxT' | 'mod' | 'modules' | 'registered' | 'start_phases' | 'vsn',_}]
+lib/application.ex:390: Type specification 'Elixir.Application':started_applications(timeout()) -> [tuple()] is a supertype of the success typing: 'Elixir.Application':started_applications('infinity' | non_neg_integer()) -> [{atom(),string(),string()}]
+lib/application.ex:398: Type specification 'Elixir.Application':loaded_applications() -> [tuple()] is a supertype of the success typing: 'Elixir.Application':loaded_applications() -> [{atom(),string(),string()}]
+lib/collectable.ex:1: The specification for 'Elixir.Collectable':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.Collectable' | 'false' | [{'into',1},...]
+lib/enum.ex:1: The specification for 'Elixir.Enumerable':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.Enumerable' | 'false' | [{'count',1} | {'member?',2} | {'reduce',3},...]
+lib/ex_unit/assertions.ex:501: Guard test is_binary(_@4::atom() | tuple() | #{}) can never succeed
+lib/ex_unit/callbacks.ex:185: Function 'raise_merge_failed!'/2 only terminates with explicit exception
+lib/ex_unit/callbacks.ex:190: Function 'raise_merge_reserved!'/3 only terminates with explicit exception
+lib/ex_unit/doc_test.ex:150: Type specification 'Elixir.ExUnit.DocTest.Error':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
+    ; ('Elixir.String':t()) -> 'Elixir.Exception':t() is a supertype of the success typing: 'Elixir.ExUnit.DocTest.Error':exception([{atom(),_}]) -> #{}
+lib/ex_unit/runner.ex:155: The created fun only terminates with explicit exception
+lib/ex_unit/runner.ex:241: The created fun only terminates with explicit exception
+lib/ex_unit/server.ex:158: Expression produces a value of type 'nil' | {'error',_} | {'ok','undefined' | pid()}, but this value is unmatched
+lib/exception.ex:78: Overloaded contract for 'Elixir.Exception':normalize/3 has overlapping domains; such contracts are currently unsupported and are simply ignored
+lib/exception.ex:666: Clause guard cannot succeed. The variable _@3 was matched against the type float()
+lib/exception.ex:714: Type specification 'Elixir.Code.LoadError':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
+    ; ('Elixir.String':t()) -> 'Elixir.Exception':t() is a supertype of the success typing: 'Elixir.Code.LoadError':exception([{atom(),_}]) -> #{}
+lib/exception.ex:749: Type specification 'Elixir.UnicodeConversionError':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
+    ; ('Elixir.String':t()) -> 'Elixir.Exception':t() is a supertype of the success typing: 'Elixir.UnicodeConversionError':exception([{atom(),_}]) -> #{}
+lib/gen_event.ex:763: Function system_terminate/4 has no local return
+lib/gen_event.ex:1032: Function server_terminate/4 only terminates with explicit exception
+lib/hash_dict.ex:37: The created fun only terminates with explicit exception
+lib/iex.ex:443: The pattern {'error', 'self'} can never match the type 'ok' | {'error','no_iex' | 'refused'}
+lib/iex/autocomplete.ex:179: Clause guard cannot succeed. The variable _@3 was matched against the type [binary(),...]
+lib/iex/autocomplete.ex:191: Clause guard cannot succeed. The variable _@3 was matched against the type [binary()]
+lib/iex/autocomplete.ex:229: Clause guard cannot succeed. The variable _@3 was matched against the type {'ok',_}
+lib/iex/autocomplete.ex:257: Clause guard cannot succeed. The variable _@3 was matched against the type binary()
+lib/iex/cli.ex:132: The created fun has no local return
+lib/iex/info.ex:1: The specification for 'Elixir.IEx.Info':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.IEx.Info' | 'false' | [{'info',1},...]
+lib/iex/info.ex:231: Function info/1 has no local return
+lib/iex/info.ex:233: The call rpc:pinfo(pid@1::any(),['links' | 'message_queue_len' | 'registered_name',...]) breaks the contract (Pid,Item) -> {Item,Info} | 'undefined' | [] when is_subtype(Pid,pid()), is_subtype(Item,atom()), is_subtype(Info,term())
+lib/iex/info.ex:248: Function process_name/1 will never be called
+lib/iex/info.ex:251: Function links/1 will never be called
+lib/inspect.ex:4: The specification for 'Elixir.Inspect':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.Inspect' | 'false' | [{'inspect',2},...]
+lib/inspect/algebra.ex:231: Guard test is_atom(_@12::#{}) can never succeed
+lib/inspect/algebra.ex:231: Guard test is_binary(_@11::#{}) can never succeed
+lib/inspect/algebra.ex:329: Type specification 'Elixir.Inspect.Algebra':break() -> doc_break() is a supertype of the success typing: 'Elixir.Inspect.Algebra':break() -> {'doc_break',<<_:8>>}
+lib/inspect/algebra.ex:439: The specification for 'Elixir.Inspect.Algebra':surround/3 states that the function might also return 'doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_cons','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},'doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()}} | {'doc_nest','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},non_neg_integer()} but the inferred return is {'doc_group','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},'doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()}} | {'doc_nest','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},non_neg_integer()}}
+lib/inspect/algebra.ex:468: The specification for 'Elixir.Inspect.Algebra':surround_many/6 states that the function might also return 'doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_nest','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},non_neg_integer()} but the inferred return is {'doc_group','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},'doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()}} | {'doc_nest','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},non_neg_integer()}} | {'doc_cons','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()}} | {'doc_cons',_,_} | {'doc_nest','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},non_neg_integer()},'doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()}} | {'doc_cons',_,_} | {'doc_nest','doc_line' | 'doc_nil' | binary() | {'doc_break',binary()} | {'doc_group',_} | {'doc_cons',_,_} | {'doc_nest',_,non_neg_integer()},non_neg_integer()}}
+lib/inspect/algebra.ex:522: The specification for 'Elixir.Inspect.Algebra':format/2 states that the function might also return binary() but the inferred return is [binary()]
+lib/io.ex:231: Overloaded contract for 'Elixir.IO':getn/2 has overlapping domains; such contracts are currently unsupported and are simply ignored
+lib/kernel.ex:256: Type specification 'Elixir.Kernel':hd(maybe_improper_list()) -> term() is a supertype of the success typing: 'Elixir.Kernel':hd(nonempty_maybe_improper_list()) -> any()
+lib/kernel.ex:744: Type specification 'Elixir.Kernel':spawn_monitor(module(),atom(),[any()]) -> {pid(),reference()} is a supertype of the success typing: 'Elixir.Kernel':spawn_monitor(atom(),atom(),[any()]) -> {pid(),reference()}
+lib/kernel.ex:1841: The call 'Elixir.Access':pop('nil',h@1::any()) will never return since it differs in the 1st argument from the success typing arguments: ([{atom(),_}] | #{},any())
+lib/kernel.ex:2282: The pattern 'false' can never match the type 'true'
+lib/kernel.ex:2299: The pattern 'false' can never match the type 'true'
+lib/kernel.ex:3011: The pattern 'false' can never match the type 'true'
+lib/kernel.ex:4126: The pattern 'false' can never match the type 'true'
+lib/kernel/cli.ex:35: Function run/1 has no local return
+lib/kernel/cli.ex:35: The call 'Elixir.Kernel.CLI':run(x0@1::any(),'true') will never return since it differs in the 2nd argument from the success typing arguments: (fun((_) -> any()),'false' | 'nil')
+lib/kernel/parallel_compiler.ex:92: The created fun only terminates with explicit exception
+lib/kernel/parallel_compiler.ex:199: Function handle_deadlock/2 only terminates with explicit exception
+lib/kernel/parallel_require.ex:43: The created fun only terminates with explicit exception
+lib/kernel/special_forms.ex:44: Function 'MACRO-{}'/2 has no local return
+lib/kernel/special_forms.ex:106: Function 'MACRO-%{}'/2 has no local return
+lib/kernel/special_forms.ex:168: Function 'MACRO-%'/3 has no local return
+lib/kernel/special_forms.ex:367: Function 'MACRO-<<>>'/2 has no local return
+lib/kernel/special_forms.ex:476: Function 'MACRO-.'/3 has no local return
+lib/kernel/special_forms.ex:526: Function 'MACRO-alias'/3 has no local return
+lib/kernel/special_forms.ex:554: Function 'MACRO-require'/3 has no local return
+lib/kernel/special_forms.ex:653: Function 'MACRO-import'/3 has no local return
+lib/kernel/special_forms.ex:661: Function 'MACRO-__ENV__'/1 has no local return
+lib/kernel/special_forms.ex:669: Function 'MACRO-__MODULE__'/1 has no local return
+lib/kernel/special_forms.ex:677: Function 'MACRO-__DIR__'/1 has no local return
+lib/kernel/special_forms.ex:685: Function 'MACRO-__CALLER__'/1 has no local return
+lib/kernel/special_forms.ex:717: Function 'MACRO-^'/2 has no local return
+lib/kernel/special_forms.ex:722: Function 'MACRO-='/3 has no local return
+lib/kernel/special_forms.ex:743: Function 'MACRO-::'/3 has no local return
+lib/kernel/special_forms.ex:1222: Function 'MACRO-quote'/3 has no local return
+lib/kernel/special_forms.ex:1251: Function 'MACRO-unquote'/2 has no local return
+lib/kernel/special_forms.ex:1266: Function 'MACRO-unquote_splicing'/2 has no local return
+lib/kernel/special_forms.ex:1335: Function 'MACRO-for'/2 has no local return
+lib/kernel/special_forms.ex:1393: Function 'MACRO-with'/2 has no local return
+lib/kernel/special_forms.ex:1405: Function 'MACRO-fn'/2 has no local return
+lib/kernel/special_forms.ex:1422: Function 'MACRO-__block__'/2 has no local return
+lib/kernel/special_forms.ex:1491: Function 'MACRO-&'/2 has no local return
+lib/kernel/special_forms.ex:1525: Function 'MACRO-__aliases__'/2 has no local return
+lib/kernel/special_forms.ex:1532: Function 'MACRO-super'/2 has no local return
+lib/kernel/special_forms.ex:1605: Function 'MACRO-case'/3 has no local return
+lib/kernel/special_forms.ex:1634: Function 'MACRO-cond'/2 has no local return
+lib/kernel/special_forms.ex:1855: Function 'MACRO-try'/2 has no local return
+lib/kernel/special_forms.ex:1905: Function 'MACRO-receive'/2 has no local return
+lib/kernel/special_forms.ex:1907: Function 'error!'/1 only terminates with explicit exception
+lib/kernel/typespec.ex:952: Function compile_error/2 only terminates with explicit exception
+lib/keyword.ex:464: Type specification 'Elixir.Keyword':put(t(),key(),value()) -> t() is a supertype of the success typing: 'Elixir.Keyword':put([{atom(),_}],atom(),_) -> [{atom(),_},...]
+lib/list/chars.ex:1: The specification for 'Elixir.List.Chars':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.List.Chars' | 'false' | [{'to_char_list',1},...]
+lib/macro.ex:79: Type specification 'Elixir.Macro':binary_op_props(atom()) -> {'left' | 'right',precedence::integer()} is a supertype of the success typing: 'Elixir.Macro':binary_op_props(atom()) -> {'left',40 | 130 | 140 | 150 | 160 | 170 | 180 | 210 | 220 | 310} | {'right',50 | 60 | 70 | 90 | 200}
+lib/macro/env.ex:126: Type specification 'Elixir.Macro.Env':stacktrace(t()) -> [any()] is a supertype of the success typing: 'Elixir.Macro.Env':stacktrace(#{}) -> [{_,_,_,[{_,_},...]},...]
+lib/mix/cli.ex:26: Expression produces a value of type 'nil' | [any()], but this value is unmatched
+lib/mix/cli.ex:70: Guard test is_atom(_@6::#{}) can never succeed
+lib/mix/cli.ex:70: Guard test is_binary(_@5::#{}) can never succeed
+lib/mix/compilers/elixir.ex:43: Clause guard cannot succeed. The variable _@8 was matched against the type [any()]
+lib/mix/compilers/elixir.ex:80: Expression produces a value of type [any()], but this value is unmatched
+lib/mix/compilers/elixir.ex:159: Clause guard cannot succeed. The variable _@4 was matched against the type binary()
+lib/mix/compilers/elixir.ex:239: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
+lib/mix/compilers/elixir.ex:249: Expression produces a value of type [any()], but this value is unmatched
+lib/mix/compilers/erlang.ex:77: Expression produces a value of type 'true' | {'error','bad_directory'}, but this value is unmatched
+lib/mix/config.ex:171: Guard test is_atom(_@5::#{}) can never succeed
+lib/mix/config.ex:171: Guard test is_binary(_@4::#{}) can never succeed
+lib/mix/config/agent.ex:21: Invalid type specification for function 'Elixir.Mix.Config.Agent':merge/2. The success typing is (atom() | pid() | {atom(),_} | {'via',atom() | tuple(),_},_) -> 'ok'
+lib/mix/dep/loader.ex:202: Function invalid_dep_format/1 has no local return
+lib/mix/exceptions.ex:25: Expression produces a value of type [atom()], but this value is unmatched
+lib/mix/generator.ex:47: Type specification 'Elixir.Mix.Generator':create_directory('Elixir.Path':t()) -> any() is a supertype of the success typing: 'Elixir.Mix.Generator':create_directory(binary()) -> 'ok'
+lib/mix/local/installer.ex:33: Type specification 'Elixir.Mix.Local.Installer':install({module(),atom()},'Elixir.OptionParser':argv(),'Elixir.Keyword':t()) -> boolean() is a supertype of the success typing: 'Elixir.Mix.Local.Installer':install({atom() | tuple(),'archive' | 'escript'},[binary()],[{atom(),_}]) -> boolean()
+lib/mix/local/installer.ex:154: Invalid type specification for function 'Elixir.Mix.Local.Installer':uninstall/2. The success typing is ('archive' | 'escript',[binary()]) -> 'nil' | binary()
+lib/mix/project.ex:97: The specification for 'Elixir.Mix.Project':get/0 states that the function might also return tuple() but the inferred return is 'nil'
+lib/mix/project.ex:114: The specification for 'Elixir.Mix.Project':'get!'/0 states that the function might also return tuple() but the inferred return is 'nil'
+lib/mix/project.ex:414: Expression produces a value of type [binary()], but this value is unmatched
+lib/mix/project_stack.ex:128: Type specification 'Elixir.Mix.ProjectStack':recur(fun(...) -> result) -> result is a supertype of the success typing: 'Elixir.Mix.ProjectStack':recur(fun(() -> any())) -> any()
+lib/mix/rebar.ex:100: The pattern <'new', [], _news@1, _acc@1, _current@1> can never match the type <'new' | 'old',[any(),...],[],[any()],_>
+lib/mix/rebar.ex:108: The pattern <'old', _olds@1, [_new@1 | _news@1], _acc@1, _current@1> can never match the type <'new' | 'old',[any()],[],[any()],_>
+lib/mix/shell.ex:119: The call 'Elixir.String':to_char_list(command@3::string()) will never return since the success typing is (binary()) -> [any()] and the contract is (t()) -> elixir:char_list()
+lib/mix/task.ex:71: Clause guard cannot succeed. The variable _@3 was matched against the type {'ok',[string()]}
+lib/mix/task.ex:168: The specification for 'Elixir.Mix.Task':task_name/1 states that the function might also return atom() but the inferred return is binary()
+lib/mix/task.ex:304: The variable _proj@1 can never match since previous clauses completely covered the type 'nil'
+lib/mix/task.ex:318: Clause guard cannot succeed. The variable _@2 was matched against the type 'nil'
+lib/mix/tasks/app.start.ex:45: Expression produces a value of type 'true' | {'error','bad_directory'}, but this value is unmatched
+lib/mix/tasks/app.start.ex:56: Expression produces a value of type 'nil' | 'ok' | {'error',_}, but this value is unmatched
+lib/mix/tasks/archive.build.ex:47: Clause guard cannot succeed. The variable _@4 was matched against the type 'nil'
+lib/mix/tasks/archive.uninstall.ex:12: Invalid type specification for function 'Elixir.Mix.Tasks.Archive.Uninstall':run/1. The success typing is ([binary()]) -> 'nil' | binary()
+lib/mix/tasks/compile.ex:57: Clause guard cannot succeed. The variable _@3 was matched against the type binary()
+lib/mix/tasks/compile.protocols.ex:53: Expression produces a value of type {'ok',[binary()]} | {'error',atom(),binary()}, but this value is unmatched
+lib/mix/tasks/compile.protocols.ex:99: Expression produces a value of type [any()], but this value is unmatched
+lib/mix/tasks/compile.protocols.ex:129: Expression produces a value of type [any()], but this value is unmatched
+lib/mix/tasks/compile.protocols.ex:149: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
+lib/mix/tasks/deps.compile.ex:156: Guard test 'or'('false','false') can never succeed
+lib/mix/tasks/escript.build.ex:116: The pattern 'true' can never match the type 'false'
+lib/mix/tasks/escript.build.ex:116: Guard test 'or'('false','false') can never succeed
+lib/mix/tasks/escript.build.ex:170: Guard test 'or'('false','false') can never succeed
+lib/mix/tasks/escript.install.ex:53: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
+lib/mix/tasks/escript.install.ex:54: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
+lib/mix/tasks/loadpaths.ex:66: Expression produces a value of type 'ok' | {'ok',[binary()]} | {'error',atom(),binary()}, but this value is unmatched
+lib/mix/tasks/test.ex:206: Expression produces a value of type [any()], but this value is unmatched
+lib/mix/tasks/test.ex:222: The created fun only terminates with explicit exception
+lib/mix/utils.ex:411: Expression produces a value of type 'nil' | 'ok' | {'error',_}, but this value is unmatched
+lib/mix/utils.ex:431: The pattern 'nil' can never match the type #{}
+lib/module/locals_tracker.ex:147: Clause guard cannot succeed. The variable _@3 was matched against the type [any()]
+lib/node.ex:197: Type specification 'Elixir.Node':spawn(t(),module(),atom(),[any()]) -> pid() is a supertype of the success typing: 'Elixir.Node':spawn(atom(),atom(),atom(),[any()]) -> pid()
+lib/node.ex:242: Type specification 'Elixir.Node':spawn_link(t(),module(),atom(),[any()]) -> pid() is a supertype of the success typing: 'Elixir.Node':spawn_link(atom(),atom(),atom(),[any()]) -> pid()
+lib/protocol.ex:61: Type specification 'Elixir.Protocol':'assert_protocol!'(module()) -> 'ok' | no_return() is a supertype of the success typing: 'Elixir.Protocol':'assert_protocol!'(atom()) -> 'ok'
+lib/regex.ex:138: Type specification 'Elixir.Regex':'compile!'(binary(),binary() | [term()]) -> t() is a supertype of the success typing: 'Elixir.Regex':'compile!'(binary(),binary() | [atom() | {'newline','any' | 'anycrlf' | 'cr' | 'crlf' | 'lf'}]) -> #{}
+lib/regex.ex:380: Type specification 'Elixir.Regex':split(t(),'Elixir.String':t(),[term()]) -> ['Elixir.String':t()] is a supertype of the success typing: 'Elixir.Regex':split(#{},binary(),[{atom(),_}]) -> [binary()]
+lib/set.ex:143: Function unsupported_set/1 only terminates with explicit exception
+lib/stream.ex:128: Type specification 'Elixir.Stream':chunk('Elixir.Enumerable':t(),non_neg_integer()) -> 'Elixir.Enumerable':t() is a supertype of the success typing: 'Elixir.Stream':chunk(_,pos_integer()) -> #{}
+lib/string.ex:484: The specification for 'Elixir.String':'equivalent?'/2 states that the function might also return boolean() but the inferred return is none()
+lib/string.ex:485: Function 'equivalent?'/2 has no local return
+lib/string.ex:514: The contract 'Elixir.String':normalize(t(),atom()) -> boolean() cannot be right because the inferred return for normalize(string1@1::any(),'nfd') on line 486 is bitstring()
+lib/string/chars.ex:3: The specification for 'Elixir.String.Chars':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.String.Chars' | 'false' | [{'to_string',1},...]
+lib/string_io.ex:316: Function do_get_until/6 will never be called
+lib/system.ex:88: The test <<>> == <<_:56>> can never evaluate to 'true'
+lib/task.ex:478: Expression produces a value of type 'false' | non_neg_integer(), but this value is unmatched
+lib/task/supervised.ex:102: Function exit/4 only terminates with explicit exception
+lib/version.ex:393: Type specification 'Elixir.Version.Parser':parse_requirement('Elixir.String':t()) -> {'ok',term()} | 'error' is a supertype of the success typing: 'Elixir.Version.Parser':parse_requirement(binary()) -> 'error' | {'ok',[{{_,_,_,_,_},[any(),...],[any(),...]},...]}
+src/elixir_def.erl:84: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_def.erl:90: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_def.erl:161: Expression produces a value of type 'ok' | [], but this value is unmatched
+src/elixir_dispatch.erl:47: Expression produces a value of type 'false' | 'ok' | [any()], but this value is unmatched
+src/elixir_dispatch.erl:57: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_dispatch.erl:133: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_dispatch.erl:141: Expression produces a value of type 'false' | 'ok' | [any()], but this value is unmatched
+src/elixir_dispatch.erl:146: Expression produces a value of type 'false' | 'ok' | [any()], but this value is unmatched
+src/elixir_dispatch.erl:330: The variable Message can never match since previous clauses completely covered the type 'false'
+src/elixir_dispatch.erl:335: Function deprecation_message/4 will never be called
+src/elixir_dispatch.erl:344: Function deprecation_message/2 will never be called
+src/elixir_exp.erl:511: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_import.erl:27: Expression produces a value of type 'ok' | ['ok'], but this value is unmatched
+src/elixir_module.erl:88: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_module.erl:116: Expression produces a value of type 'ok' | [any()], but this value is unmatched
+src/elixir_module.erl:553: The pattern 'in_memory' can never match the type 'cover_compiled' | 'non_existing' | 'preloaded'
+src/elixir_parser.erl:2321: Function yeccpars2_81/7 has no local return
+src/elixir_parser.erl:2361: Function yeccpars2_83/7 has no local return
+src/elixir_parser.erl:4444: Function yeccpars2_293/7 has no local return
+src/elixir_parser.erl:4803: Function yeccpars2_332/7 has no local return
+src/elixir_parser.erl:4808: Function yeccpars2_333/7 has no local return
+src/elixir_parser.erl:5025: Function yeccpars2_359/7 has no local return
+src/elixir_parser.yrl:137: Function yeccpars2_81_/1 has no local return
+src/elixir_parser.yrl:449: Function yeccpars2_293_/1 has no local return
+src/elixir_parser.yrl:468: Function yeccpars2_332_/1 has no local return
+src/elixir_parser.yrl:469: Function yeccpars2_333_/1 has no local return
+src/elixir_parser.yrl:478: Function yeccpars2_83_/1 has no local return
+src/elixir_parser.yrl:491: Function yeccpars2_352_/1 has no local return
+src/elixir_parser.yrl:491: Function yeccpars2_359_/1 has no local return
+src/elixir_parser.yrl:792: Function throw/3 only terminates with explicit exception
+src/elixir_parser.yrl:800: Function throw_bad_atom/1 has no local return
+src/elixir_parser.yrl:804: Function throw_no_parens_strict/1 has no local return
+src/elixir_parser.yrl:809: Function throw_no_parens_many_strict/1 has no local return
+src/elixir_parser.yrl:821: Function throw_no_parens_container_strict/1 has no local return
+src/elixir_parser.yrl:834: Function throw_invalid_kw_identifier/1 has no local return
+src/elixir_quote.erl:118: Function argument_error/1 only terminates with explicit exception
+src/elixir_quote.erl:298: Function bad_escape/1 has no local return
+src/elixir_quote.erl:370: Guard test 'line' =:= Key::'keep' can never succeed
+Unknown functions:
+  'Elixir.Collectable.Atom':'__impl__'/1
+  'Elixir.Collectable.Float':'__impl__'/1
+  'Elixir.Collectable.Function':'__impl__'/1
+  'Elixir.Collectable.Integer':'__impl__'/1
+  'Elixir.Collectable.PID':'__impl__'/1
+  'Elixir.Collectable.Port':'__impl__'/1
+  'Elixir.Collectable.Reference':'__impl__'/1
+  'Elixir.Collectable.Tuple':'__impl__'/1
+  'Elixir.Enumerable.Atom':'__impl__'/1
+  'Elixir.Enumerable.BitString':'__impl__'/1
+  'Elixir.Enumerable.Float':'__impl__'/1
+  'Elixir.Enumerable.Integer':'__impl__'/1
+  'Elixir.Enumerable.PID':'__impl__'/1
+  'Elixir.Enumerable.Port':'__impl__'/1
+  'Elixir.Enumerable.Reference':'__impl__'/1
+  'Elixir.Enumerable.Tuple':'__impl__'/1
+  'Elixir.Hex':start/0
+  'Elixir.Hex':version/0
+  'Elixir.List.Chars.Function':'__impl__'/1
+  'Elixir.List.Chars.Map':'__impl__'/1
+  'Elixir.List.Chars.PID':'__impl__'/1
+  'Elixir.List.Chars.Port':'__impl__'/1
+  'Elixir.List.Chars.Reference':'__impl__'/1
+  'Elixir.List.Chars.Tuple':'__impl__'/1
+  'Elixir.String.Chars.Function':'__impl__'/1
+  'Elixir.String.Chars.Map':'__impl__'/1
+  'Elixir.String.Chars.PID':'__impl__'/1
+  'Elixir.String.Chars.Port':'__impl__'/1
+  'Elixir.String.Chars.Reference':'__impl__'/1
+  'Elixir.String.Chars.Tuple':'__impl__'/1
+  crypto:hash/2
+  public_key:pem_decode/1
+  public_key:pem_entry_decode/1
+  public_key:verify/4
+Unknown types:
+  public_key:der_encoded/0
+  public_key:private_key/0
+ done in 2m13.40s
+done (warnings were emitted)
+make: *** [dialyze] Error 2
