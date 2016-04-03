@@ -1,6 +1,3 @@
-==> elixir (compile)
-==> Dialyzing Elixir...
-  Compiling some key modules to native code... done in 0m0.46s
   Proceeding with analysis...
 lib/application.ex:125: Type specification 'Elixir.Application':spec(app()) -> [{key(),value()}] | 'nil' is a supertype of the success typing: 'Elixir.Application':spec(atom()) -> 'nil' | [{'applications' | 'description' | 'env' | 'id' | 'included_applications' | 'maxP' | 'maxT' | 'mod' | 'modules' | 'registered' | 'start_phases' | 'vsn',_}]
 lib/application.ex:390: Type specification 'Elixir.Application':started_applications(timeout()) -> [tuple()] is a supertype of the success typing: 'Elixir.Application':started_applications('infinity' | non_neg_integer()) -> [{atom(),string(),string()}]
@@ -8,18 +5,18 @@ lib/application.ex:398: Type specification 'Elixir.Application':loaded_applicati
 lib/collectable.ex:1: The specification for 'Elixir.Collectable':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.Collectable' | 'false' | [{'into',1},...]
 lib/enum.ex:1: The specification for 'Elixir.Enumerable':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.Enumerable' | 'false' | [{'count',1} | {'member?',2} | {'reduce',3},...]
 lib/ex_unit/assertions.ex:501: Guard test is_binary(_@4::atom() | tuple() | #{}) can never succeed
-lib/ex_unit/callbacks.ex:185: Function 'raise_merge_failed!'/2 only terminates with explicit exception
-lib/ex_unit/callbacks.ex:190: Function 'raise_merge_reserved!'/3 only terminates with explicit exception
+lib/ex_unit/callbacks.ex:181: Function 'raise_merge_failed!'/2 only terminates with explicit exception
+lib/ex_unit/callbacks.ex:186: Function 'raise_merge_reserved!'/3 only terminates with explicit exception
 lib/ex_unit/doc_test.ex:150: Type specification 'Elixir.ExUnit.DocTest.Error':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
     ; ('Elixir.String':t()) -> 'Elixir.Exception':t() is a supertype of the success typing: 'Elixir.ExUnit.DocTest.Error':exception([{atom(),_}]) -> #{}
 lib/ex_unit/runner.ex:155: The created fun only terminates with explicit exception
 lib/ex_unit/runner.ex:241: The created fun only terminates with explicit exception
 lib/ex_unit/server.ex:158: Expression produces a value of type 'nil' | {'error',_} | {'ok','undefined' | pid()}, but this value is unmatched
 lib/exception.ex:78: Overloaded contract for 'Elixir.Exception':normalize/3 has overlapping domains; such contracts are currently unsupported and are simply ignored
-lib/exception.ex:666: Clause guard cannot succeed. The variable _@3 was matched against the type float()
-lib/exception.ex:714: Type specification 'Elixir.Code.LoadError':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
+lib/exception.ex:663: Clause guard cannot succeed. The variable _@3 was matched against the type float()
+lib/exception.ex:711: Type specification 'Elixir.Code.LoadError':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
     ; ('Elixir.String':t()) -> 'Elixir.Exception':t() is a supertype of the success typing: 'Elixir.Code.LoadError':exception([{atom(),_}]) -> #{}
-lib/exception.ex:749: Type specification 'Elixir.UnicodeConversionError':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
+lib/exception.ex:746: Type specification 'Elixir.UnicodeConversionError':exception('Elixir.Keyword':t()) -> 'Elixir.Exception':t()
     ; ('Elixir.String':t()) -> 'Elixir.Exception':t() is a supertype of the success typing: 'Elixir.UnicodeConversionError':exception([{atom(),_}]) -> #{}
 lib/gen_event.ex:763: Function system_terminate/4 has no local return
 lib/gen_event.ex:1032: Function server_terminate/4 only terminates with explicit exception
@@ -55,36 +52,35 @@ lib/kernel/cli.ex:35: The call 'Elixir.Kernel.CLI':run(x0@1::any(),'true') will 
 lib/kernel/parallel_compiler.ex:92: The created fun only terminates with explicit exception
 lib/kernel/parallel_compiler.ex:199: Function handle_deadlock/2 only terminates with explicit exception
 lib/kernel/parallel_require.ex:43: The created fun only terminates with explicit exception
-lib/kernel/special_forms.ex:44: Function 'MACRO-{}'/2 has no local return
-lib/kernel/special_forms.ex:106: Function 'MACRO-%{}'/2 has no local return
-lib/kernel/special_forms.ex:168: Function 'MACRO-%'/3 has no local return
-lib/kernel/special_forms.ex:367: Function 'MACRO-<<>>'/2 has no local return
-lib/kernel/special_forms.ex:476: Function 'MACRO-.'/3 has no local return
-lib/kernel/special_forms.ex:526: Function 'MACRO-alias'/3 has no local return
-lib/kernel/special_forms.ex:554: Function 'MACRO-require'/3 has no local return
-lib/kernel/special_forms.ex:653: Function 'MACRO-import'/3 has no local return
-lib/kernel/special_forms.ex:661: Function 'MACRO-__ENV__'/1 has no local return
-lib/kernel/special_forms.ex:669: Function 'MACRO-__MODULE__'/1 has no local return
-lib/kernel/special_forms.ex:677: Function 'MACRO-__DIR__'/1 has no local return
-lib/kernel/special_forms.ex:685: Function 'MACRO-__CALLER__'/1 has no local return
-lib/kernel/special_forms.ex:717: Function 'MACRO-^'/2 has no local return
-lib/kernel/special_forms.ex:722: Function 'MACRO-='/3 has no local return
-lib/kernel/special_forms.ex:743: Function 'MACRO-::'/3 has no local return
-lib/kernel/special_forms.ex:1222: Function 'MACRO-quote'/3 has no local return
-lib/kernel/special_forms.ex:1251: Function 'MACRO-unquote'/2 has no local return
-lib/kernel/special_forms.ex:1266: Function 'MACRO-unquote_splicing'/2 has no local return
-lib/kernel/special_forms.ex:1335: Function 'MACRO-for'/2 has no local return
-lib/kernel/special_forms.ex:1393: Function 'MACRO-with'/2 has no local return
-lib/kernel/special_forms.ex:1405: Function 'MACRO-fn'/2 has no local return
-lib/kernel/special_forms.ex:1422: Function 'MACRO-__block__'/2 has no local return
-lib/kernel/special_forms.ex:1491: Function 'MACRO-&'/2 has no local return
-lib/kernel/special_forms.ex:1525: Function 'MACRO-__aliases__'/2 has no local return
-lib/kernel/special_forms.ex:1532: Function 'MACRO-super'/2 has no local return
-lib/kernel/special_forms.ex:1605: Function 'MACRO-case'/3 has no local return
-lib/kernel/special_forms.ex:1634: Function 'MACRO-cond'/2 has no local return
-lib/kernel/special_forms.ex:1855: Function 'MACRO-try'/2 has no local return
-lib/kernel/special_forms.ex:1905: Function 'MACRO-receive'/2 has no local return
-lib/kernel/special_forms.ex:1907: Function 'error!'/1 only terminates with explicit exception
+lib/kernel/special_forms.ex:52: Function 'MACRO-{}'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:114: Function 'MACRO-%{}'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:176: Function 'MACRO-%'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:375: Function 'MACRO-<<>>'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:484: Function 'MACRO-.'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:534: Function 'MACRO-alias'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:562: Function 'MACRO-require'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:661: Function 'MACRO-import'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:669: Function 'MACRO-__ENV__'/1 only terminates with explicit exception
+lib/kernel/special_forms.ex:677: Function 'MACRO-__MODULE__'/1 only terminates with explicit exception
+lib/kernel/special_forms.ex:685: Function 'MACRO-__DIR__'/1 only terminates with explicit exception
+lib/kernel/special_forms.ex:693: Function 'MACRO-__CALLER__'/1 only terminates with explicit exception
+lib/kernel/special_forms.ex:725: Function 'MACRO-^'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:730: Function 'MACRO-='/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:751: Function 'MACRO-::'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:1230: Function 'MACRO-quote'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:1259: Function 'MACRO-unquote'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1274: Function 'MACRO-unquote_splicing'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1343: Function 'MACRO-for'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1401: Function 'MACRO-with'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1413: Function 'MACRO-fn'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1430: Function 'MACRO-__block__'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1499: Function 'MACRO-&'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1533: Function 'MACRO-__aliases__'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1540: Function 'MACRO-super'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1613: Function 'MACRO-case'/3 only terminates with explicit exception
+lib/kernel/special_forms.ex:1642: Function 'MACRO-cond'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1863: Function 'MACRO-try'/2 only terminates with explicit exception
+lib/kernel/special_forms.ex:1913: Function 'MACRO-receive'/2 only terminates with explicit exception
 lib/kernel/typespec.ex:952: Function compile_error/2 only terminates with explicit exception
 lib/keyword.ex:464: Type specification 'Elixir.Keyword':put(t(),key(),value()) -> t() is a supertype of the success typing: 'Elixir.Keyword':put([{atom(),_}],atom(),_) -> [{atom(),_},...]
 lib/list/chars.ex:1: The specification for 'Elixir.List.Chars':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.List.Chars' | 'false' | [{'to_char_list',1},...]
@@ -113,27 +109,26 @@ lib/mix/project.ex:414: Expression produces a value of type [binary()], but this
 lib/mix/project_stack.ex:128: Type specification 'Elixir.Mix.ProjectStack':recur(fun(...) -> result) -> result is a supertype of the success typing: 'Elixir.Mix.ProjectStack':recur(fun(() -> any())) -> any()
 lib/mix/rebar.ex:100: The pattern <'new', [], _news@1, _acc@1, _current@1> can never match the type <'new' | 'old',[any(),...],[],[any()],_>
 lib/mix/rebar.ex:108: The pattern <'old', _olds@1, [_new@1 | _news@1], _acc@1, _current@1> can never match the type <'new' | 'old',[any()],[],[any()],_>
-lib/mix/shell.ex:119: The call 'Elixir.String':to_char_list(command@3::string()) will never return since the success typing is (binary()) -> [any()] and the contract is (t()) -> elixir:char_list()
 lib/mix/task.ex:71: Clause guard cannot succeed. The variable _@3 was matched against the type {'ok',[string()]}
 lib/mix/task.ex:168: The specification for 'Elixir.Mix.Task':task_name/1 states that the function might also return atom() but the inferred return is binary()
 lib/mix/task.ex:304: The variable _proj@1 can never match since previous clauses completely covered the type 'nil'
 lib/mix/task.ex:318: Clause guard cannot succeed. The variable _@2 was matched against the type 'nil'
-lib/mix/tasks/app.start.ex:45: Expression produces a value of type 'true' | {'error','bad_directory'}, but this value is unmatched
-lib/mix/tasks/app.start.ex:56: Expression produces a value of type 'nil' | 'ok' | {'error',_}, but this value is unmatched
+lib/mix/tasks/app.start.ex:46: Expression produces a value of type 'true' | {'error','bad_directory'}, but this value is unmatched
+lib/mix/tasks/app.start.ex:57: Expression produces a value of type 'nil' | 'ok' | {'error',_}, but this value is unmatched
 lib/mix/tasks/archive.build.ex:47: Clause guard cannot succeed. The variable _@4 was matched against the type 'nil'
 lib/mix/tasks/archive.uninstall.ex:12: Invalid type specification for function 'Elixir.Mix.Tasks.Archive.Uninstall':run/1. The success typing is ([binary()]) -> 'nil' | binary()
-lib/mix/tasks/compile.ex:57: Clause guard cannot succeed. The variable _@3 was matched against the type binary()
+lib/mix/tasks/compile.ex:58: Clause guard cannot succeed. The variable _@3 was matched against the type binary()
 lib/mix/tasks/compile.protocols.ex:53: Expression produces a value of type {'ok',[binary()]} | {'error',atom(),binary()}, but this value is unmatched
 lib/mix/tasks/compile.protocols.ex:99: Expression produces a value of type [any()], but this value is unmatched
 lib/mix/tasks/compile.protocols.ex:129: Expression produces a value of type [any()], but this value is unmatched
 lib/mix/tasks/compile.protocols.ex:149: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
-lib/mix/tasks/deps.compile.ex:156: Guard test 'or'('false','false') can never succeed
+lib/mix/tasks/deps.compile.ex:168: Guard test 'or'('false','false') can never succeed
 lib/mix/tasks/escript.build.ex:116: The pattern 'true' can never match the type 'false'
 lib/mix/tasks/escript.build.ex:116: Guard test 'or'('false','false') can never succeed
 lib/mix/tasks/escript.build.ex:170: Guard test 'or'('false','false') can never succeed
 lib/mix/tasks/escript.install.ex:53: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
 lib/mix/tasks/escript.install.ex:54: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
-lib/mix/tasks/loadpaths.ex:66: Expression produces a value of type 'ok' | {'ok',[binary()]} | {'error',atom(),binary()}, but this value is unmatched
+lib/mix/tasks/loadpaths.ex:67: Expression produces a value of type 'ok' | {'ok',[binary()]} | {'error',atom(),binary()}, but this value is unmatched
 lib/mix/tasks/test.ex:206: Expression produces a value of type [any()], but this value is unmatched
 lib/mix/tasks/test.ex:222: The created fun only terminates with explicit exception
 lib/mix/utils.ex:411: Expression produces a value of type 'nil' | 'ok' | {'error',_}, but this value is unmatched
@@ -231,6 +226,3 @@ Unknown functions:
 Unknown types:
   public_key:der_encoded/0
   public_key:private_key/0
- done in 2m13.40s
-done (warnings were emitted)
-make: *** [dialyze] Error 2
