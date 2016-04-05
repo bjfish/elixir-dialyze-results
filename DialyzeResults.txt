@@ -146,7 +146,7 @@ lib/string.ex:485: Function 'equivalent?'/2 has no local return
 lib/string.ex:514: The contract 'Elixir.String':normalize(t(),atom()) -> boolean() cannot be right because the inferred return for normalize(string1@1::any(),'nfd') on line 486 is bitstring()
 lib/string/chars.ex:3: The specification for 'Elixir.String.Chars':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.String.Chars' | 'false' | [{'to_string',1},...]
 lib/string_io.ex:316: Function do_get_until/6 will never be called
-lib/system.ex:88: The test <<>> == <<_:56>> can never evaluate to 'true'
+lib/system.ex:112: The test <<>> == <<_:56>> can never evaluate to 'true'
 lib/task.ex:478: Expression produces a value of type 'false' | non_neg_integer(), but this value is unmatched
 lib/task/supervised.ex:102: Function exit/4 only terminates with explicit exception
 lib/version.ex:393: Type specification 'Elixir.Version.Parser':parse_requirement('Elixir.String':t()) -> {'ok',term()} | 'error' is a supertype of the success typing: 'Elixir.Version.Parser':parse_requirement(binary()) -> 'error' | {'ok',[{{_,_,_,_,_},[any(),...],[any(),...]},...]}
@@ -166,25 +166,25 @@ src/elixir_import.erl:27: Expression produces a value of type 'ok' | ['ok'], but
 src/elixir_module.erl:88: Expression produces a value of type 'ok' | [any()], but this value is unmatched
 src/elixir_module.erl:116: Expression produces a value of type 'ok' | [any()], but this value is unmatched
 src/elixir_module.erl:553: The pattern 'in_memory' can never match the type 'cover_compiled' | 'non_existing' | 'preloaded'
-src/elixir_parser.erl:2321: Function yeccpars2_81/7 has no local return
-src/elixir_parser.erl:2361: Function yeccpars2_83/7 has no local return
-src/elixir_parser.erl:4444: Function yeccpars2_293/7 has no local return
-src/elixir_parser.erl:4803: Function yeccpars2_332/7 has no local return
-src/elixir_parser.erl:4808: Function yeccpars2_333/7 has no local return
-src/elixir_parser.erl:5025: Function yeccpars2_359/7 has no local return
-src/elixir_parser.yrl:137: Function yeccpars2_81_/1 has no local return
-src/elixir_parser.yrl:449: Function yeccpars2_293_/1 has no local return
-src/elixir_parser.yrl:468: Function yeccpars2_332_/1 has no local return
-src/elixir_parser.yrl:469: Function yeccpars2_333_/1 has no local return
-src/elixir_parser.yrl:478: Function yeccpars2_83_/1 has no local return
-src/elixir_parser.yrl:491: Function yeccpars2_352_/1 has no local return
-src/elixir_parser.yrl:491: Function yeccpars2_359_/1 has no local return
-src/elixir_parser.yrl:792: Function throw/3 only terminates with explicit exception
-src/elixir_parser.yrl:800: Function throw_bad_atom/1 has no local return
-src/elixir_parser.yrl:804: Function throw_no_parens_strict/1 has no local return
-src/elixir_parser.yrl:809: Function throw_no_parens_many_strict/1 has no local return
-src/elixir_parser.yrl:821: Function throw_no_parens_container_strict/1 has no local return
-src/elixir_parser.yrl:834: Function throw_invalid_kw_identifier/1 has no local return
+src/elixir_parser.erl:2301: Function yeccpars2_83/7 has no local return
+src/elixir_parser.erl:2341: Function yeccpars2_85/7 has no local return
+src/elixir_parser.erl:4426: Function yeccpars2_295/7 has no local return
+src/elixir_parser.erl:4785: Function yeccpars2_334/7 has no local return
+src/elixir_parser.erl:4790: Function yeccpars2_335/7 has no local return
+src/elixir_parser.erl:5005: Function yeccpars2_361/7 has no local return
+src/elixir_parser.yrl:138: Function yeccpars2_83_/1 has no local return
+src/elixir_parser.yrl:450: Function yeccpars2_295_/1 has no local return
+src/elixir_parser.yrl:469: Function yeccpars2_334_/1 has no local return
+src/elixir_parser.yrl:470: Function yeccpars2_335_/1 has no local return
+src/elixir_parser.yrl:479: Function yeccpars2_85_/1 has no local return
+src/elixir_parser.yrl:492: Function yeccpars2_354_/1 has no local return
+src/elixir_parser.yrl:492: Function yeccpars2_361_/1 has no local return
+src/elixir_parser.yrl:796: Function throw/3 only terminates with explicit exception
+src/elixir_parser.yrl:804: Function throw_bad_atom/1 has no local return
+src/elixir_parser.yrl:808: Function throw_no_parens_strict/1 has no local return
+src/elixir_parser.yrl:813: Function throw_no_parens_many_strict/1 has no local return
+src/elixir_parser.yrl:825: Function throw_no_parens_container_strict/1 has no local return
+src/elixir_parser.yrl:838: Function throw_invalid_kw_identifier/1 has no local return
 src/elixir_quote.erl:118: Function argument_error/1 only terminates with explicit exception
 src/elixir_quote.erl:298: Function bad_escape/1 has no local return
 src/elixir_quote.erl:370: Guard test 'line' =:= Key::'keep' can never succeed
