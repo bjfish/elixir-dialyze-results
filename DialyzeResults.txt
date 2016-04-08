@@ -1,4 +1,4 @@
-  Proceeding with analysis...
+Proceeding with analysis...
 lib/application.ex:125: Type specification 'Elixir.Application':spec(app()) -> [{key(),value()}] | 'nil' is a supertype of the success typing: 'Elixir.Application':spec(atom()) -> 'nil' | [{'applications' | 'description' | 'env' | 'id' | 'included_applications' | 'maxP' | 'maxT' | 'mod' | 'modules' | 'registered' | 'start_phases' | 'vsn',_}]
 lib/application.ex:390: Type specification 'Elixir.Application':started_applications(timeout()) -> [tuple()] is a supertype of the success typing: 'Elixir.Application':started_applications('infinity' | non_neg_integer()) -> [{atom(),string(),string()}]
 lib/application.ex:398: Type specification 'Elixir.Application':loaded_applications() -> [tuple()] is a supertype of the success typing: 'Elixir.Application':loaded_applications() -> [{atom(),string(),string()}]
@@ -94,7 +94,7 @@ lib/mix/compilers/elixir.ex:80: Expression produces a value of type [any()], but
 lib/mix/compilers/elixir.ex:159: Clause guard cannot succeed. The variable _@4 was matched against the type binary()
 lib/mix/compilers/elixir.ex:239: Expression produces a value of type 'ok' | {'error',atom()}, but this value is unmatched
 lib/mix/compilers/elixir.ex:249: Expression produces a value of type [any()], but this value is unmatched
-lib/mix/compilers/erlang.ex:77: Expression produces a value of type 'true' | {'error','bad_directory'}, but this value is unmatched
+lib/mix/compilers/erlang.ex:81: Expression produces a value of type 'true' | {'error','bad_directory'}, but this value is unmatched
 lib/mix/config.ex:171: Guard test is_atom(_@5::#{}) can never succeed
 lib/mix/config.ex:171: Guard test is_binary(_@4::#{}) can never succeed
 lib/mix/config/agent.ex:21: Invalid type specification for function 'Elixir.Mix.Config.Agent':merge/2. The success typing is (atom() | pid() | {atom(),_} | {'via',atom() | tuple(),_},_) -> 'ok'
@@ -146,7 +146,7 @@ lib/string.ex:485: Function 'equivalent?'/2 has no local return
 lib/string.ex:514: The contract 'Elixir.String':normalize(t(),atom()) -> boolean() cannot be right because the inferred return for normalize(string1@1::any(),'nfd') on line 486 is bitstring()
 lib/string/chars.ex:3: The specification for 'Elixir.String.Chars':'__protocol__'/1 states that the function might also return 'true' but the inferred return is 'Elixir.String.Chars' | 'false' | [{'to_string',1},...]
 lib/string_io.ex:316: Function do_get_until/6 will never be called
-lib/system.ex:112: The test <<>> == <<_:56>> can never evaluate to 'true'
+lib/system.ex:169: The test <<>> == <<_:56>> can never evaluate to 'true'
 lib/task.ex:478: Expression produces a value of type 'false' | non_neg_integer(), but this value is unmatched
 lib/task/supervised.ex:102: Function exit/4 only terminates with explicit exception
 lib/version.ex:393: Type specification 'Elixir.Version.Parser':parse_requirement('Elixir.String':t()) -> {'ok',term()} | 'error' is a supertype of the success typing: 'Elixir.Version.Parser':parse_requirement(binary()) -> 'error' | {'ok',[{{_,_,_,_,_},[any(),...],[any(),...]},...]}
